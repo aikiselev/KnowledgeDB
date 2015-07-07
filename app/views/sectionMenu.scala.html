@@ -1,0 +1,19 @@
+@(currentSection: model.Section, parents: Seq[model.Section], subsections: Seq[model.Section], articles: Seq[model.Article])
+
+@main("Section: " + currentSection.shortName) {
+    <div class="container">
+        @sectionMenuBreadcrumb(parents, currentSection)
+    </div>
+    <div class="container">
+        @searchInput()
+    </div>
+    <div class="container">
+        @sectionMenuSubsectionsAndArticles(subsections, articles, parents :+ currentSection)
+    </div>
+    <div class="container">
+        @sectionMenuAddSection(currentSection)
+    </div>
+    <div class="container">
+        @sectionMenuAddArticle(currentSection)
+    </div>
+}

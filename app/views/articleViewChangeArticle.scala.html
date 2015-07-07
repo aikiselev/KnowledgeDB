@@ -1,0 +1,32 @@
+@(article: model.Article)
+
+<div class="btn-group btn-group-justified" role="group" >
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary" id="removeSection">
+            Remove
+        </button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary" id="editArticle" onclick="window.location = '/editArticle?@article.id'">
+            Edit Article
+        </button>
+    </div>
+</div>
+<script>
+    $( document ).ready(function() {
+        $("#removeSection").click(function(){
+
+            var data = {
+                uuid: '@article.id'
+            };
+            $.ajax({
+                type: "POST",
+                url: "@controllers.routes.Application.removeArticle()",
+                data: JSON.stringify(data),
+                success: setTimeout(function(){window.location = '/getSection?@article.sectionID'}, 50),
+                dataType:'application/json',
+                contentType : 'application/json'
+                });
+            });
+        });
+    </script>

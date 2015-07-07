@@ -1,0 +1,21 @@
+@(articles: Seq[model.Article], query: String, articlesParents: Seq[Seq[model.Section]])
+
+@main("Search") {
+
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+    </ol>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Searching for query: "@query". Found @articles.length results:</h3>
+      @for((article, parents) <- articles zip articlesParents) {
+        <h4>@parents.map(_.itemNumber).mkString(".") @article.itemNumber. @article.longName</h4>
+        <h5>@article.text</h5>
+      }
+    </div>
+  </div>
+
+}

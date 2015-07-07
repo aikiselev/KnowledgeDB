@@ -1,0 +1,40 @@
+@(subsections: Seq[model.Section], articles: Seq[model.Article], parents: Seq[model.Section])
+<div class="list-group" id="sections-list">
+    @subsections.map { s =>
+        <div class="input-group">
+            <button type="button" class="list-group-item" id="#section:@s.id"
+                onclick="window.location = '/getSection?@s.id'">
+                @if(parents.isEmpty) {
+                    @s.itemNumber
+                }
+                @if(parents.nonEmpty) {
+                    @parents.map(_.itemNumber).mkString(".").@s.itemNumber
+                } @s.shortName</button>
+            <span class="input-group-btn" onclick="removeSection('@s.id')">
+                <button type="button" class="btn btn-danger" >
+                    X
+                </button>
+            </span>
+        </div>
+    }
+    @articles.zipWithIndex.map { case (a, i) =>
+        <button type="button" class="list-group-item list-group-item-info" id="#article:@a.id"
+            onclick="window.location = '/getArticle?@a.id'">@a.itemNumber.  @a.shortName<span class="badge">Article</span></button>
+    }
+ </div>
+
+<script>
+    function removeSection(sectionID) {
+        var data = {
+            uuid: sectionID
+        };
+        $.ajax({
+            type: "POST",
+            url: "@controllers.routes.Application.removeSection()",
+                data: JSON.stringify(data),
+                dataType:'application/json',
+                contentType : 'application/json'
+            });
+        setTimeout(function() { location.reload(true) }, 300);
+    }
+</script>

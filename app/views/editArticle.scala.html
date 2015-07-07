@@ -1,0 +1,54 @@
+@(parents: Seq[model.Section], article: model.Article)
+
+@main("Article editor") {
+    <div class="container">
+    @articleViewBreadcrumb(parents, article)
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <form class="navbar-form" xmlns="http://www.w3.org/1999/html">
+                <div class="input-group-vertical">
+                    <input type="text" class="form-control" id="name">
+                    <button type="button" class="btn btn-primary" id="updateArticle">
+                            Save
+                    </button>
+                </div>
+                <div class="input-group-vertical">
+                    <h4>
+                    <textarea type="text" class="form-control" id="text" rows="8" style="width: 490px; height: 160px;" autocomplete="off"></textarea>
+                    </h4>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<script>
+    $("#name").val("@article.longName.lines");
+    @*//$("#text").html('@(article.text.replace("\n", "\\\n"))'.replace(/\r\n?/g, "<br />"));*@
+    $("#text").html(@for(line <- article.text.lines) {
+     "@line" + "\n" +
+    }"");
+    $(document).ready(function() {
+        $("#updateArticle").click(function(){
+            var data = {
+                uuid: '@article.id',
+                name: $("#name").val(),
+                text: $("#text").val(),
+                sectionID: "@article.sectionID"
+            };
+            $.ajax({
+                type: "POST",
+                url: "@controllers.routes.Application.updateArticle()",
+                data: JSON.stringify(data),
+                success: setTimeout(function(){
+                    window.location = "/getArticle?@article.id";
+                }, 300),
+                dataType : 'application/json',
+                contentType : 'application/json'
+            });
+        });
+    });
+</script>
+}

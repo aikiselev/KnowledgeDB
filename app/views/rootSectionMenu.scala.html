@@ -1,0 +1,22 @@
+@(subsections: Seq[model.Section])
+
+@main("Root sections") {
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="active">Home</li>
+        </ol>
+    </div>
+
+    <div class="container">
+        @searchInput()
+    </div>
+
+    <div class="container">
+        @sectionMenuSubsectionsAndArticles(subsections, List[model.Article](), List[model.Section]())
+    </div>
+
+    <div class="container">
+        @rootSectionMenuAddSection()
+    </div>
+}
+

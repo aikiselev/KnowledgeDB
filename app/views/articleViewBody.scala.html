@@ -1,0 +1,11 @@
+@(article: model.Article)
+
+
+<div class="jumbotron">
+        <div class="container">
+        <h1>@article.longName</h1>
+        @for(line <- article.text.lines) {
+                <p>@line</p>
+        }
+        </div>
+</div>

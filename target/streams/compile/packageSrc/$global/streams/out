@@ -1,0 +1,27 @@
+[0m[[0minfo[0m] [0mPackaging /home/kiselev/Downloads/KnowledgeDB/target/scala-2.10/play-scala-2-3_2.10-1.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	model/SearchRepository.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/model/SearchRepository.scala[0m
+[0m[[0mdebug[0m] [0m	routes[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/conf/routes[0m
+[0m[[0mdebug[0m] [0m	model/SaveDBtoXML.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/model/SaveDBtoXML.scala[0m
+[0m[[0mdebug[0m] [0m	Global.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/Global.scala[0m
+[0m[[0mdebug[0m] [0m	application.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/conf/application.conf[0m
+[0m[[0mdebug[0m] [0m	model/LoadDBfromXML.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/model/LoadDBfromXML.scala[0m
+[0m[[0mdebug[0m] [0m	evolutions/default[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/conf/evolutions/default[0m
+[0m[[0mdebug[0m] [0m	model/KnowledgeSchema.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/model/KnowledgeSchema.scala[0m
+[0m[[0mdebug[0m] [0m	model/Repository.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/model/Repository.scala[0m
+[0m[[0mdebug[0m] [0m	controllers/Application.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/app/controllers/Application.scala[0m
+[0m[[0mdebug[0m] [0m	evolutions[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/conf/evolutions[0m
+[0m[[0mdebug[0m] [0m	evolutions/default/1.sql[0m
+[0m[[0mdebug[0m] [0m	  /home/kiselev/Downloads/KnowledgeDB/conf/evolutions/default/1.sql[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

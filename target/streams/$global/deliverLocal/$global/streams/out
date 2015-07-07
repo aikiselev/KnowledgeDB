@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m:: delivering :: play-scala-2-3#play-scala-2-3_2.10;1.0-SNAPSHOT :: 1.0-SNAPSHOT :: integration :: Sat Jul 04 17:02:51 YEKT 2015[0m
+[0m[[0mdebug[0m] [0m	options = status=integration pubdate=Sat Jul 04 17:02:51 YEKT 2015 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0minfo[0m] [0m	delivering ivy file to /Users/kiselev/Downloads/play-scala-2.3/target/scala-2.10/ivy-1.0-SNAPSHOT.xml[0m
+[0m[[0mdebug[0m] [0m	deliver done (18ms)[0m

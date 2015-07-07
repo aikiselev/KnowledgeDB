@@ -1,0 +1,64 @@
+@(parentSection: model.Section)
+<div class="input-group" onload="init()">
+    <input type="text" class="form-control" id="title" placeholder="New Article Name">
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-primary" id="submitArticle">
+            Add
+        </button>
+    </span>
+</div>
+<div class="input-group">
+    <textarea id="text" class="form-control" spellcheck="true" rows="16" cols="300" autocomplete="off" type="text" placeholder="New Article Text"></textarea>
+</div>
+
+<script>
+    $( document ).ready(function() {
+        $("#submitArticle").click(function(){
+
+            var data = {
+                name: $("#title").val(),
+                text: $("#text").val(),
+                sectionID: "@parentSection.id"
+            };
+            $.ajax({
+                type: "POST",
+                url: "@controllers.routes.Application.addArticle()",
+                data: JSON.stringify(data),
+                dataType:'application/json',
+                contentType : 'application/json'
+            });
+            setTimeout(function() { location.reload(true) },50);
+        });
+    });
+    var observe;
+    if (window.attachEvent) {
+        observe = function (element, event, handler) {
+            element.attachEvent('on'+event, handler);
+        };
+    }
+    else {
+        observe = function (element, event, handler) {
+            element.addEventListener(event, handler, false);
+        };
+    }
+    function init () {
+        var text = document.getElementById('text');
+        function resize () {
+            text.style.height = 'auto';
+            text.style.height = text.scrollHeight+'px';
+        }
+        /* 0-timeout to get the already changed text */
+        function delayedResize () {
+            window.setTimeout(resize, 1);
+        }
+        observe(text, 'change',  resize);
+        observe(text, 'cut',     delayedResize);
+        observe(text, 'paste',   delayedResize);
+        observe(text, 'drop',    delayedResize);
+        observe(text, 'keydown', delayedResize);
+
+        text.focus();
+        text.select();
+        resize();
+    }
+</script>

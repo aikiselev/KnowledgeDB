@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                      controllers.Application.index
+
+POST        /submitArticle         controllers.Application.addArticle
+
+POST        /addRootSection        controllers.Application.addRootSection
+
+POST        /addSection            controllers.Application.addSection
+
+POST        /removeSection         controllers.Application.removeSection
+
+POST        /removeArticle         controllers.Application.removeArticle
+
+POST        /updateArticle         controllers.Application.updateArticle
+
+GET         /getSection            controllers.Application.sectionMenu
+
+GET         /getArticle            controllers.Application.articleView
+
+GET         /editArticle           controllers.Application.editArticle
+
+GET         /search                controllers.Application.search
+
+GET         /exportToXML           controllers.Application.exportToXML
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file          controllers.Assets.at(path="/public", file)

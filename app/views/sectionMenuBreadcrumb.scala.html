@@ -1,0 +1,14 @@
+@(parents: Seq[model.Section], currentSection: model.Section)
+
+<ol class="breadcrumb">
+   <li><a href="/">Home</a></li>
+   @for((p,i) <- parents.zipWithIndex) {
+       <li><a href="#" onclick="window.location = '/getSection?@p.id'">@parents.map(_.itemNumber).take(i+1).mkString(".") @p.shortName</a></li>
+   }
+    @if(parents.isEmpty) {
+        <li class="active">@currentSection.itemNumber @currentSection.shortName</li>
+    }
+    @if(parents.nonEmpty) {
+        <li class="active">@parents.map(_.itemNumber).mkString(".").@currentSection.itemNumber @currentSection.shortName</li>
+    }
+</ol>

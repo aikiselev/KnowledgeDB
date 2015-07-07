@@ -1,0 +1,13 @@
+@(parents: Seq[model.Section], article: model.Article)
+
+@main("Article: " + article.shortName) {
+    <div class="container">
+    @articleViewBreadcrumb(parents, article)
+    </div>
+    <div class="container">
+    @articleViewBody(article)
+    </div>
+    <div class="container">
+    @articleViewChangeArticle(article)
+    </div>
+}
