@@ -1,7 +1,0 @@
-[0m[[31merror[0m] [0m/Users/kiselev/Downloads/play-scala-2.3/app/model/Repository.scala:50: value get is not a member of model.Article[0m
-[0m[[31merror[0m] [0m    val article = getArticleByUUID(articleUUID).get[0m
-[0m[[31merror[0m] [0m                                                ^[0m
-[0m[[31merror[0m] [0m/Users/kiselev/Downloads/play-scala-2.3/app/model/Repository.scala:70: reassignment to val[0m
-[0m[[31merror[0m] [0m        childSection.parentID = parentUUID[0m
-[0m[[31merror[0m] [0m                              ^[0m
-[0m[[31merror[0m] [0mtwo errors found[0m
